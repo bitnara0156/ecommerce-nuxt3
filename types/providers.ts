@@ -1,0 +1,1 @@
+export type providers = 'google' | 'github' | 'facebook'
