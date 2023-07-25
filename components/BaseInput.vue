@@ -1,7 +1,7 @@
 <template>
-<div class="text-ellipsis whitespace-nowrap mt-7">
+<div class="text-ellipsis whitespace-nowrap">
     <div
-        class="flex flex-col"
+        class="flex flex-col mt-7"
         :class="{
             'relative': label
         }"
@@ -11,7 +11,7 @@
             class="text-xs text-gray-600 absolute top-1/2 -translate-y-1/2 left-2 transition-all text-ellipsis overflow-hidden whitespace-nowrap pointer-events-none"
             :class="{
                 'text-red-300': errorMessage, 
-                '-top-3 text-primary-200': focused || modelValue
+                '-top-[calc(3_*_.25rem)] text-primary-200': focused || modelValue
             }"
         >
             {{ label }}
