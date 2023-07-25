@@ -19,13 +19,16 @@
 }
 @layer components {
     .button {
-        @apply cursor-pointer py-1 px-2 text-sm rounded border border-gray-100 hover:bg-gray-100 text-gray-700 active:border-gray-300;
+        @apply cursor-pointer h-10 flex justify-center items-center py-1 px-2 text-sm rounded border border-gray-300 hover:bg-gray-200 text-gray-700 focus:border-gray-300;
 
         &.default {
-            @apply hover:bg-primary-200 hover:text-gray-100 active:bg-primary-300 active:border-primary-200 transition-colors
+            @apply hover:bg-primary-200 hover:text-white active:bg-primary-300 active:border-primary-200 transition-colors
         }
         &.stroked {
-            @apply bg-primary-300 hover:bg-primary-300 active:bg-primary-400 transition-colors border-gray-100 text-white shadow-md
+            @apply bg-primary-300 hover:bg-primary-400 active:bg-primary-500 transition-colors border-gray-100 text-white shadow-md
+        }
+        &.icon {
+            @apply justify-between
         }
     }
 }

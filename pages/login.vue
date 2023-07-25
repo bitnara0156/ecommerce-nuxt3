@@ -9,7 +9,11 @@
     </div>
     <div class="card-footer">
         <base-button type="stroked" @click="onSubmit">Login</base-button>
-        
+        <base-button type="default" @click="onSubmit">Login</base-button>
+        <base-button type="icon" @click="onSubmit">
+        Login
+        <i class="fa-solid fa-arrow-right"></i>
+        </base-button>
         <small>Have no account yet? <NuxtLink to="/signup" class="text-link">Sign Up</NuxtLink></small>
     </div>
 </div>  
