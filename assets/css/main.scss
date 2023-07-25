@@ -11,18 +11,18 @@
         @apply flex flex-col px-4 py-2 rounded shadow bg-white dark:bg-dark-100;
     }
     .card-body {
-        @apply flex flex-col gap-3 w-full;
+        @apply flex flex-col gap-1 w-full;
     }
     .card-footer {
-        @apply flex flex-col gap-1 py-2 border-t border-gray-100 mt-1
+        @apply flex flex-col gap-1 py-2 border-t border-gray-200 mt-1
     }
 }
 @layer components {
     .button {
-        @apply cursor-pointer py-1 px-2 text-sm rounded border border-gray-100 hover:bg-gray-100 text-gray-700 active:border-gray-200;
+        @apply cursor-pointer py-1 px-2 text-sm rounded border border-gray-100 hover:bg-gray-100 text-gray-700 active:border-gray-300;
 
         &.default {
-            @apply hover:bg-primary-200 active:bg-primary-300 active:border-primary-200 transition-colors
+            @apply hover:bg-primary-200 hover:text-gray-100 active:bg-primary-300 active:border-primary-200 transition-colors
         }
         &.stroked {
             @apply bg-primary-300 hover:bg-primary-300 active:bg-primary-400 transition-colors border-gray-100 text-white shadow-md
