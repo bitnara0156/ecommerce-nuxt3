@@ -1,6 +1,9 @@
+import { PropType } from 'vue';
 type ButtonType = 'default' | 'stroked' | 'icon' | null
-export default interface IBaseButtonProps {
-    type: ButtonType
+export default {
+    type: {
+        type: String as PropType<ButtonType>,
+        required: false,
+        default: 'default'
+    }
 }
-
-export { ButtonType }

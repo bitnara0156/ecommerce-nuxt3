@@ -8,16 +8,17 @@
         >
         <label
             v-if="label"
-            class="text-xs text-gray-600 absolute top-1/2 -translate-y-1/2 left-2 transition-all text-ellipsis overflow-hidden whitespace-nowrap pointer-events-none"
+            class="text-xs text-gray-600 absolute -translate-y-1/2 left-2 transition-all text-ellipsis overflow-hidden whitespace-nowrap pointer-events-none"
             :class="{
                 'text-red-300': errorMessage, 
-                '-top-[calc(3_*_.25rem)] text-primary-200': focused || modelValue
+                '-top-[calc(3_*_.25rem)] text-primary-200': focused || modelValue,
+                'top-1/2': !focused && !modelValue
             }"
         >
             {{ label }}
         </label>
         <input
-            :value="props.modelValue"
+            :value="modelValue"
             @input="onInput"
             @focusin="focused = true"
             @focusout="focused = false"
@@ -37,43 +38,13 @@
 </template>
 
 <script lang="ts" setup>
-    const props = defineProps({
-        modelValue: {
-            type: String,
-            required: true
-        },
-        placeholder: {
-            type: String,
-            required: false,
-            default: ''
-        },
-        label: {
-            type: String,
-            required: false,
-            default: ''
-        },
-        errorMessage: {
-            type: String,
-            required: false,
-            default: ''
-        },
-        autocomplete: {
-            type: String,
-            required: false,
-            default: ''
-        },
-        name: {
-            type: String,
-            required: false,
-            default: ''
-        },
-        type: {
-            type: String,
-            required: false,
-            default: 'text'
-        }
-    })
-    const emits = defineEmits(['update:modelValue'])
+    import BaseInputProps from "../../../interfaces/props/BaseInputProps";
+    const props = defineProps({...BaseInputProps});
+
+    const emits = defineEmits<{
+        (event: 'update:modelValue', value: String):void,
+    }>()
+
     const focused = ref(false)
     function onInput(event: Event) {
         const inputValue: String = (event.target as HTMLInputElement).value as String

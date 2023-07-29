@@ -1,19 +1,12 @@
 <template>
 <div class="base-card w-96">
-    <p class="text-gray-700 text-sm py-2 pb-5">Login</p>
-    <div class="card-body">
-        <base-input
-        v-model="email" autocomplete="on" name="email" placeholder="Login" label="Email" errorMessage="123123123123" />
-        <base-input
-        v-model="password" type="password" autocomplete="on" name="current-password" placeholder="Password" label="Password" errorMessage="123123123121231231231231231231231231231231231231231231233" />
+    <h1 class="text-gray-700 pt-2">Welcome</h1>
+    <div class="card-body">    
+        <base-input label="Email" v-model="email"></base-input>  
+        <base-input label="Password" v-model="password"></base-input>  
     </div>
     <div class="card-footer">
-        <base-button type="stroked" @click="onSubmit">Login</base-button>
-        <base-button type="default" @click="onSubmit">Login</base-button>
-        <base-button type="icon" @click="onSubmit">
-        Login
-        <i class="fa-solid fa-arrow-right"></i>
-        </base-button>
+        <base-button type='stroked'>Login</base-button>
         <small>Have no account yet? <NuxtLink to="/signup" class="text-link">Sign Up</NuxtLink></small>
     </div>
 </div>  

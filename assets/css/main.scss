@@ -1,7 +1,8 @@
+@import '../../components/UI/BaseButton/styles.scss';
+@import '../../components/UI/BaseInput/styles.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
     .text-link {
@@ -11,24 +12,10 @@
         @apply flex flex-col px-4 py-2 rounded shadow bg-white dark:bg-dark-100;
     }
     .card-body {
-        @apply flex flex-col gap-1 w-full;
+        @apply flex flex-col w-full;
     }
     .card-footer {
         @apply flex flex-col gap-1 py-2 border-t border-gray-200 mt-1
     }
 }
-@layer components {
-    .button {
-        @apply cursor-pointer h-10 flex justify-center items-center py-1 px-2 text-sm rounded border border-gray-300 hover:bg-gray-200 text-gray-700 focus:border-gray-300;
 
-        &.default {
-            @apply hover:bg-primary-200 hover:text-white active:bg-primary-300 active:border-primary-200 transition-colors
-        }
-        &.stroked {
-            @apply bg-primary-300 hover:bg-primary-400 active:bg-primary-500 transition-colors border-gray-100 text-white shadow-md
-        }
-        &.icon {
-            @apply justify-between
-        }
-    }
-}

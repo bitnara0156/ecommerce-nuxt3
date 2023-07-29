@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  components: {
+    global: true,
+    dirs: ['~/components/UI/', '~/components'],
+  },
   devtools: { enabled: true },
   css: ['~/assets/css/main.scss'],
   app: {
@@ -14,5 +18,5 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
+  }
 })
