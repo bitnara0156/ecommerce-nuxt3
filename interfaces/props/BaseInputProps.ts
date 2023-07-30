@@ -4,6 +4,11 @@ export default {
         type: String,
         required: true
     },
+    findErrors: {
+        type: Function as PropType<(value: String) => string>,
+        required: false,
+        default: () => '',
+    },
     placeholder: {
         type: String,
         required: false,
@@ -20,7 +25,7 @@ export default {
         default: ''
     },
     autocomplete: {
-        type: String,
+        type: String as PropType<'on' | 'off' | 'email' | 'password'>,
         required: false,
         default: ''
     },

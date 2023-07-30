@@ -8,9 +8,9 @@
         >
         <label
             v-if="label"
-            class="text-xs text-gray-600 absolute -translate-y-1/2 left-2 transition-all text-ellipsis overflow-hidden whitespace-nowrap pointer-events-none"
+            class="input-label"
             :class="{
-                'text-red-300': errorMessage, 
+                'text-red-300': errorMessage || localError, 
                 '-top-[calc(3_*_.25rem)] text-primary-200': focused || modelValue,
                 'top-1/2': !focused && !modelValue
             }"
@@ -20,25 +20,27 @@
         <input
             :value="modelValue"
             @input="onInput"
-            @focusin="focused = true"
-            @focusout="focused = false"
-            :placeholder="label ? '' : placeholder"
+            @focusin="changeFocus(true)"
+            @focusout="changeFocus(false)"
+            :placeholder="placeholder"
             :autocomplete="autocomplete"
             :name="name"
             :type="type"
-            class="outline-none rounded px-2 py-1 text-sm border border-gray-300 focus:border-primary-200 transition-colors text-gray-700 h-10 placeholder:text-xs placeholder:pb-5"
+            class="input"
             :class="{
-                'border-red-300': errorMessage,
-                'border-primary-200': modelValue
+                'border-red-300': errorMessage || localError,
+                'border-primary-200': modelValue,
+                'placeholder-hidden': !focused && label
             }"
         />
     </div>
-    <small class="text-xs block text-red-500 opacity-0 transition-opacity h-4 overflow-hidden text-ellipsis whitespace-nowrap" :class="{'opacity-100': errorMessage}" >{{ errorMessage }}</small>
+    <small class="error-message" :class="{'opacity-100': errorMessage || localError}" >{{ errorMessage || localError }}</small>
 </div>
 </template>
 
 <script lang="ts" setup>
     import BaseInputProps from "../../../interfaces/props/BaseInputProps";
+    import {ref} from 'vue';
     const props = defineProps({...BaseInputProps});
 
     const emits = defineEmits<{
@@ -46,12 +48,13 @@
     }>()
 
     const focused = ref(false)
+    const localError = ref('')
     function onInput(event: Event) {
         const inputValue: String = (event.target as HTMLInputElement).value as String
+        localError.value = props.findErrors(inputValue);
         emits('update:modelValue', inputValue)        
     }
+    function changeFocus(value) {
+        focused.value = value;
+    }
 </script>
-
-<style>
-
-</style>

@@ -19,3 +19,11 @@
     }
 }
 
+@layer utilities {
+    .scrollbar-hidden::-webkit-scrollbar {
+        width: 0;
+    }
+    .placeholder-hidden::placeholder {
+        opacity: 0;
+    }
+}
