@@ -5,6 +5,7 @@ export default {
     title: 'UI/BaseButton',
     component: BaseButton,
     argTypes: BaseButtonProps as unknown,
+    tags: ['autodocs'],
 } as Meta;
 
 const Template: StoryFn<typeof BaseButton> = (args) => ({
@@ -16,6 +17,7 @@ const Template: StoryFn<typeof BaseButton> = (args) => ({
     <base-button v-bind="args" v-html="args.default" />
     `
 })
+
 export const Default = Template.bind({});
 Default.args = {
     type: 'default',

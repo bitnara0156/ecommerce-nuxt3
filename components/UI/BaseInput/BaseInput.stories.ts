@@ -5,6 +5,7 @@ export default {
     title: 'UI/BaseInput',
     component: BaseInput,
     argTypes: BaseInputProps as unknown,
+    tags: ['autodocs'],  
 } as Meta;
 
 const Template: StoryFn<typeof BaseInput> = (args) => ({
