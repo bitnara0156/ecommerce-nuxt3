@@ -38,5 +38,10 @@ export default {
         type: String,
         required: false,
         default: 'text'
-    }
+    },
+    value: {
+        type: String,
+        required: false,
+        default: '',
+    },
 }

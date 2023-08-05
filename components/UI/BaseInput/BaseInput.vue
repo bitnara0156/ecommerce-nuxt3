@@ -18,7 +18,7 @@
             {{ label }}
         </label>
         <input
-            :value="modelValue"
+            :value="modelValue || value"
             @input="onInput"
             @focusin="changeFocus(true)"
             @focusout="changeFocus(false)"
@@ -40,7 +40,7 @@
 
 <script lang="ts" setup>
     import BaseInputProps from "../../../interfaces/props/BaseInputProps";
-    import {ref} from 'vue';
+    import { ref } from 'vue';
     const props = defineProps({...BaseInputProps});
 
     const emits = defineEmits<{

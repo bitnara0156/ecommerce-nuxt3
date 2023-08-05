@@ -1,0 +1,22 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+@layer components {
+    .range-input {
+        background: none;
+        pointer-events: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+    }
+    .range-input::-webkit-slider-thumb {
+        pointer-events: auto;
+        appearance: none;
+        @apply rounded-full w-[16px] h-[16px] bg-primary-300 transition-all shadow-[0_0_25px_.1px_#a5b4fc] hover:shadow-[0_0_12px_.5px_#a5b4fc]
+    }
+    .range-input::-moz-range-thumb {
+        pointer-events: auto;
+        appearance: none;
+        @apply rounded-full w-[16px] h-[16px] bg-primary-300 transition-all shadow-[0_0_25px_.1px_#a5b4fc] hover:shadow-[0_0_12px_.5px_#a5b4fc]
+    }
+}

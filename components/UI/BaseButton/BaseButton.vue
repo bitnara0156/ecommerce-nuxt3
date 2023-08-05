@@ -10,5 +10,5 @@
 
 <script lang="ts" setup>
   import BaseButtonProps from "../../../interfaces/props/BaseButtonProps";
-  const props = defineProps(BaseButtonProps);
+  const props = defineProps<BaseButtonProps>();
 </script>

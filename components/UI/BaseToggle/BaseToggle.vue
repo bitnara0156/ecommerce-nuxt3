@@ -1,5 +1,5 @@
 <template>
-    <div class="flex gap-4 items-center cursor-pointer  group" @click="changeCondition">
+    <div class="flex gap-4 items-center cursor-pointer group" @click="changeCondition">
         <small class="text-gray-600 select-none" v-if="label">{{ label }}</small>
         <div class="bg-gray-200 rounded-full h-4 w-10 flex cursor-pointer border border-gray-300 relative transition-all">
             <div
