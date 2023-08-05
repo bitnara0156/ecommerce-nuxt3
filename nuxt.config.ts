@@ -18,5 +18,8 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  vue: {
+    propsDestructure: true
   }
 })

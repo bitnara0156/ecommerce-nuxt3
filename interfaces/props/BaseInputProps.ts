@@ -2,7 +2,7 @@
 export default {
     modelValue: {
         type: String,
-        required: true
+        required: false
     },
     findErrors: {
         type: Function as PropType<(value: String) => string>,
