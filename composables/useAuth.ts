@@ -1,5 +1,6 @@
 import { ref, Ref } from 'vue'
 import { User } from "firebase/auth"
+
 import { auth } from '../api/firebase.config'
 import AuthService from "../services/Auth.service"
 import { providers } from '../types/providers'

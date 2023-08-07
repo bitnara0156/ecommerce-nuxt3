@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from "fs";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   components: {
@@ -19,7 +21,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  vue: {
-    propsDestructure: true
-  }
+  vite: {
+    vue: {
+      script: {
+        propsDestructure: true,
+        defineModel: true,
+      },
+    },
+  },
 })
