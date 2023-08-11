@@ -1,6 +1,7 @@
 <template>
     <div class="">
         404 :(
+        {{ error }}
     </div>
 </template>
 

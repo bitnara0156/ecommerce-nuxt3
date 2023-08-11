@@ -1,10 +1,10 @@
 <template>
   <button
   class="button"
-  :class="type"
+  :class="theme"
   >
     <slot></slot>
-    <i v-if="type === 'icon'" :class="props.icon"></i>
+    <i v-if="theme === 'icon'" :class="props.icon"></i>
   </button>
 </template>
 
